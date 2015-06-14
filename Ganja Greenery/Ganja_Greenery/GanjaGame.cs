@@ -25,10 +25,10 @@ class GanjaGame : GameEnvironment
         this.SetFullScreen(false);
 
         // Add the game states
-        gameStateManager.AddGameState("titleMenu", new TitleMenuState());
-        gameStateManager.AddGameState("helpState", new OptionsMenuState());
+        gameStateManager.AddGameState("titleMenuState", new TitleMenuState());
+        gameStateManager.AddGameState("optionsMenuState", new OptionsMenuState());
 
-        gameStateManager.SwitchTo("titleMenu");
+        gameStateManager.SwitchTo("titleMenuState");
 
         // Add code for music here.
 
