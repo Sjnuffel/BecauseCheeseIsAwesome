@@ -83,6 +83,8 @@
     <Compile Include="gamestates\TitleMenuState.cs" />
     <Compile Include="GanjaGame.cs" />
     <Compile Include="menu\Button.cs" />
+    <Compile Include="menu\OnOffButton.cs" />
+    <Compile Include="menu\Slider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
