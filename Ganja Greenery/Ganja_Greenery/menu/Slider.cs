@@ -33,7 +33,7 @@ class Slider : GameObjectList
             if (back.BoundingBox.Contains(new Point((int)inputHelper.MousePosition.X, (int)inputHelper.MousePosition.Y)) || dragging)
             { 
                 // Actual movement
-                float newxpos = MathHelper.Clamp(inputHelper.MousePosition.X - back.GlobalPosition.X - front.Width / 2, back.Position.X + leftmargin, back.Position.X - front.Width - rightmargin);
+                float newxpos = MathHelper.Clamp(inputHelper.MousePosition.X - back.GlobalPosition.X - front.Width / 2, back.Position.X + leftmargin, back.Position.X + back.Width - front.Width - rightmargin);
                 front.Position = new Vector2(newxpos, front.Position.Y);
                 dragging = true;
             }
