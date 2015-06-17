@@ -78,6 +78,7 @@
     <Reference Include="System.Net" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="chronic\Chronic.cs" />
     <Compile Include="gamestates\HelpState.cs" />
     <Compile Include="gamestates\OptionsMenuState.cs" />
     <Compile Include="gamestates\TitleMenuState.cs" />
