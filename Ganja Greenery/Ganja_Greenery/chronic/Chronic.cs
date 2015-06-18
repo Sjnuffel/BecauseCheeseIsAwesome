@@ -1,27 +1,40 @@
 ﻿using Microsoft.Xna.Framework;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Chronic : GameObjectList
 {
-        // Chronic is the base class for all types of weed in the game. 
-        // The main Chronic class will have properties that all species of weed have, but just differ in value.
+    // Chronic is the base class for all types of weed in the game. 
+    // Static properties
 
-    // Static properties, that have FIXED effects on the plant that cannot be altered.
+    public ushort ChronicAge = 0;                                           // in days of growth
+    public ushort ChronicExpQuality = 0;                                    // Expected Quality of the output
+
+    public static enum ChronicStage { Seed, Clone, Vegetative, Flowering }; // Stage the plant is in
+    public static enum ChronicType { Indica, Sativa, Ruderalis, Hybrid };   // Type of plant
+    public static enum ChronicFlowering { Auto, Light };                    // Way with which the plant grows
+    public static enum ChronicHeight { Short, Medium, Tall };               // Obviously, the height of the plant
+    public static enum ChronicExpYield { Low, Medium, High };               // Expected Yield
     
-    public static enum ChronicFlowering { Auto, Light };
-    public static enum ChronicHeight { Low, Medium, Tall };
-    public static enum ChronicYield { Low, Medium, High };
 
     // Variable properties
 
-    public ushort ChronicTHC; // As a percentage
-    public ushort ChronicCBD; // As a percentage
-    
-    public ushort ChronicOutput;
-    public ushort ChronicQuality;
-    
-    // Attributes that lead to increased health
-    public ushort ChronicWater;
-    public ushort ChronicLight;
-    public ushort ChronicHealth;
+    public IEnumerable<int> ChronicWater = Enumerable.Range(0, 100);                             // Plants need for water, on a scale of 0-100
+    public IEnumerable<int> ChronicLight = Enumerable.Range(0, 100);                             // Plants need for light, on a scale of 0-100
+    public IEnumerable<int> ChronicHealth = Enumerable.Range(0, 200);                            // Health of the plant, on a scale of 0-200
+
+    public ushort ChronicActYield;                                                                          // Actual yield in grams
+    public ushort ChronicActQuality;                                                                        // Actual quality, higher = better.
+    public ushort ChronicOutput;                                                                            // Output after all variables have affected the actual yield, in grams.
+
+    public ushort ChronicTHC;                                                                               // % of output that is THC rich
+    public ushort ChronicCBD;                                                                               // % of output that is CBD rich
+
+    public Chronic(int layer = 0, string id = "")
+        :base(layer, id)
+    {   
+    }
+
+
     
 }
